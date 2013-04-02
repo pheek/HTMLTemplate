@@ -3,5 +3,6 @@
 allesInButter();
 
 function allesInButter() {
-  window.alert("Alles in Butter!");
+  setTimeout("window.alert('Alles in Butter!')", 3000);
+  //window.alert("Alles in Butter!");
 }
