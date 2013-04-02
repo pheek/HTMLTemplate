@@ -1,8 +1,10 @@
 // phi@gress.ly April 2012
 
-allesInButter();
+initFunction();
 
-function allesInButter() {
-  setTimeout("window.alert('Alles in Butter!')", 3000);
-  //window.alert("Alles in Butter!");
+function initFunction() {
+    var n = window.prompt("Bitte n eingeben");
+    var m = n * (n-1) / 2;
+    window.alert("m = " + m);
+   //window.alert("Alles in Butter!");
 }

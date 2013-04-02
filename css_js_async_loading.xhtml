@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <title>Vorlage</title>   
+    <meta charset    = "utf-8" />
+    <meta name       = "author"
+          content    = "Philipp Gressly Freimann phi@gress.ly" />
+    <meta name       = "date"
+          content    = "2012-12-31T13:55:37+02:00" />
+    <link rel        = "stylesheet" 
+          href       = "css/my.css" />
+    <!-- Idee Google: 
+         http://parleys.com/#play/5148922b0364bc17fc56ca0e/chapter8/about 
+          Better here:
+         http://friendlybit.com/js/lazy-loading-asyncronous-javascript/
+      -->
+    <script id="startjs" type     = "text/javascript">
+     (function() {
+      function async_loader() {
+         var mainScript   = document.createElement('script');
+         mainScript.type  = 'text/javascript';
+         mainScript.async = true;
+         mainScript.src   = 'js/my.js';
+         var thisScript   = document.getElementById('startjs');
+         thisScript.parentNode.insertBefore(mainScript, thisScript);
+      }
+      if (window.attachEvent)
+        window.attachEvent('onload', async_loader);
+      else
+        window.addEventListener('load', async_loader, false);
+     })();
+    </script>
+  </head>
+
+  <body>
+    <h1>Vorlage</h1>
+
+  </body>
+
+</html>
