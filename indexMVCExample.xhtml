@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html>
+<!-- Split javascript from the document content. 
+     Author: philipp gressly freimann
+     Date  : März 2011
+     Notice: No handlers and no business-functions declared here.
+             Handlers are registered within "js/dom/handlers.js"
+             Businss-Functions are loaded from "js/meineFunktionen.js"
+             Layout is managed in "layout/css/style.css"
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <title>MVC mit JavaSrcipt und CSS</title>  
+    <meta   charset="utf-8" />
+    <link   type="text/css"           rel="stylesheet"   href="layout/css/style.css" />
+    <script type="text/javascript"    src="js/handlers.js"></script> 
+  </head>
+
+  <body> 
+    <h1>Ohm Rechner</h1>
+    <p>Berechnet Serie- und Parallelschaltung Ohm'scher Widerstände.</p>
+    <input id="r1" type="text" size="15"/>
+    <input id="r2" type="text" size="15"/>
+    <p>Bei Eingabe des 2. Widerstandes wird sogleich mit der Ausgabe begonnen (onkeyup).</p>
+    <br />
+    <input id="calc" type="button" value="Berechnen" />
+    <p id="r_parallel">Parallel</p>
+    <p id="r_seriell" >Seriell</p>    
+  </body>
+</html>
