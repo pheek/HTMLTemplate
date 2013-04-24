@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#yust in case someone copied the README.md
+#just in case someone copied the README.md
 rm README.md
 
 if [ $# -lt 1 ] ; then 
