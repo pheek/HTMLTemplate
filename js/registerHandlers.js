@@ -15,6 +15,6 @@
  * @param FUNCTION the function to be executed when the Handler is activated
  */
 
-registerHandler("eingabeFeld", "onkeyup", "rechnen");
-registerHandler("runButton",   "onclick", "rechnen");
+registerHandler("myInputField",  "onkeyup", "myCalculate");
+registerHandler("myRunButton",   "onclick", "myCalculate");
 

@@ -30,7 +30,6 @@ function createScriptElement(name) {
   return scriptTag;
 }
 
-
 /**
  * A nameless function, which is loaded at the beginning. 
  * This script loads oder scripts.
@@ -54,6 +53,6 @@ function createScriptElement(name) {
 
   myAttachScript("js/dom/domHelper.js");
   myAttachScript("js/registerHandlers.js");
-  myAttachScript("js/vorlage.js");
+  myAttachScript("js/template.js");
 
 })();
