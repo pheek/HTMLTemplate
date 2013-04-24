@@ -1,5 +1,8 @@
 #!/bin/sh
 
+#yust in case someone copied the README.md
+rm README.md
+
 if [ $# -lt 1 ] ; then 
   echo "switch to the Template-folder and call"
   echo "rename.sh <newName>"
@@ -22,5 +25,5 @@ mv template.html           $1.html
 mv js/template.js          js/$1.js
 mv layout/css/template.css layout/css/$1.css
 
-# this is corrupt, because "template" has been replaced.
-mv rename.sh rename.$1.sh_corrupt
+# is of no use after using (template is removed).
+rm rename.sh
