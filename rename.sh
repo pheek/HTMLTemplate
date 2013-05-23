@@ -11,8 +11,8 @@ fi
 
 for i in `find . -name "*" -exec grep -l "template" {} \;`
 do
-  mv "$i" "$i.sedsave";
-  sed "s/template/$1/g" "$i.sedsave" > "$i"
+  mv   "$i" "$i.sedsave";
+  sed  "s/template/$1/g" "$i.sedsave" > "$i"
   echo $i
 done
 

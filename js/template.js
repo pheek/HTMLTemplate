@@ -1,6 +1,6 @@
-// phi@gress.ly April 2012
+// phi@gress.ly April 2013
 
-function myCalculate() {
+function doMytemplateFct() {
     var n = readNumberFromFieldViaId("myInputField");
     outputIntoNewOrExistingParagraph("Result: " + (2*n), 'newOutputID');
 }

@@ -7,23 +7,23 @@
  *
  * Call this in your <head> using the following script:
  *    <script type  = "text/javascript"
- *             src   = "js/async_loader.js" ></script>
+ *             src  = "js/async_loader.js" ></script>
  */
 
-function createTagNS(type) {
-  var tag;
-  var ns = "http://www.w3.org/1999/xhtml";
-  if(document.createElementNS) { // firefox knows ElementNS
-    tag = document.createElementNS(ns, type);
-  } else {
-    tag = document.createElement(type);
-  }
-  return tag;
-}
+  function createTagNS(type) {
+    var tag;
+    var ns = "http://www.w3.org/1999/xhtml";
+    if(document.createElementNS) { // firefox knows ElementNS
+      tag = document.createElementNS(ns, type);
+    } else {
+      tag = document.createElement  (type)    ;
+    }
+    return tag; 
+  } 
 
 function createScriptElement(name) {
   var scriptTag;
-  scriptTag = createTagNS("script");
+  scriptTag       = createTagNS("script");
   scriptTag.async = true;
   scriptTag.setAttribute("type", "text\/javascript");
   scriptTag.setAttribute("src" , name);
@@ -37,9 +37,9 @@ function createScriptElement(name) {
 (function() {
 
   function async_loader(scriptName) {
-    var newScript   = createScriptElement(scriptName);
+    var newScript     = createScriptElement(scriptName)           ;
     var firstScript   = document.getElementsByTagName('script')[0];
-    firstScript.parentNode.insertBefore(newScript, firstScript);
+    firstScript.parentNode.insertBefore(newScript, firstScript)   ;
   }
 
   function myAttachScript(scriptName) {
