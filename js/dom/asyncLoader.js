@@ -10,16 +10,16 @@
  *             src  = "js/async_loader.js" ></script>
  */
 
-  function createTagNS(type) {
-    var tag;
-    var ns = "http://www.w3.org/1999/xhtml";
-    if(document.createElementNS) { // firefox knows ElementNS
-      tag = document.createElementNS(ns, type);
-    } else {
-      tag = document.createElement  (type)    ;
-    }
-    return tag; 
-  } 
+function createTagNS(type) {
+  var tag;
+  var ns = "http://www.w3.org/1999/xhtml";
+  if(document.createElementNS) { // firefox knows ElementNS
+    tag = document.createElementNS(ns, type);
+  } else {
+    tag = document.createElement  (type)    ;
+  }
+  return tag; 
+} 
 
 function createScriptElement(name) {
   var scriptTag;

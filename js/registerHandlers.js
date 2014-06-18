@@ -18,3 +18,14 @@
 registerHandler("myInputField",  "onkeyup", "doMytemplateFct");
 registerHandler("myRunButton",   "onclick", "doMytemplateFct");
 
+/**
+ * Register a handler. EG
+ * registerHandler("myButton", "onclick", "doThings");
+ * @id    given id of (usualy) an input element.
+ * @event a handler like "onclick", onkeyup, ...
+ * @fct   the function which will be called, when the handler is invoked.
+ */
+function registerHandler(id, event, fct) {
+    var IDEle = document.getElementById(id);
+    IDEle.setAttribute(event, fct + "();");
+}

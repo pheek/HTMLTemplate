@@ -4,7 +4,7 @@
 rm README.md
 
 if [ $# -lt 1 ] ; then 
-  echo "switch to the Template-folder and call"
+  echo "switch to a copy of the template-folder and call"
   echo "rename.sh <newName>"
   exit 1
 fi
