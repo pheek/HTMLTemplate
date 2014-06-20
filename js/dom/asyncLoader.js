@@ -53,6 +53,6 @@ function createScriptElement(name) {
 
   myAttachScript("js/dom/domHelper.js");
   myAttachScript("js/registerHandlers.js");
-  myAttachScript("js/template.js");
+  myAttachScript("js/_template_.js");
 
 })();

@@ -12,7 +12,7 @@ fi
 for i in `find . -name "*" -exec grep -l "template" {} \;`
 do
   mv   "$i" "$i.sedsave";
-  sed  "s/template/$1/g" "$i.sedsave" > "$i"
+  sed  "s/_template_/$1/g" "$i.sedsave" > "$i"
   echo $i
 done
 
@@ -21,9 +21,9 @@ do
   rm $i
 done
 
-mv template.html           $1.html
-mv js/template.js          js/$1.js
-mv layout/css/template.css layout/css/$1.css
+mv _template_.html           $1.html
+mv js/_template_.js          js/$1.js
+mv layout/css/_template_.css layout/css/$1.css
 
 # is of no use after using (template is removed).
 rm rename.sh

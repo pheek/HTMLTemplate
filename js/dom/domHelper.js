@@ -2,7 +2,7 @@
  * @author  : Philipp Gressly Freimann (phi@gress.ly)
  * @version : 2013 April 24
  *
- * Helper funcitons to manipulate the DOM.
+ * Helper functions to manipulate the DOM.
  * (Reading out input fields (such as numbers) and writing directly into paragraphs.)
  */
 
