@@ -1,6 +1,7 @@
 /**
  * @author  : Philipp Gressly Freimann (phi@gress.ly)
  * @version : 2013 April 24
+ * @version : 2016 10 31
  *
  * Helper functions to manipulate the DOM.
  * (Reading out input fields (such as numbers) and writing directly into paragraphs.)
@@ -55,6 +56,7 @@ function setFirstTextChild(tagID, text) {
    }
 }
 
+
 /**
  * Append tag into existing tag.
  * The new tag is created and filled with the given text (netTaxTextContent).
@@ -93,6 +95,7 @@ function outputIntoNewOrExistingParagraph(text, paraID) {
     oldPara.appendChild(txtNode);
   }
 }
+
 
 /**
  * Helper function to generate a new tag containing given text.
@@ -136,3 +139,24 @@ function replaceTag(tagID, text) {
   parentNode.replaceChild(newTag, oldTag); 
 }
 
+
+
+// ECMAScript6 missing function "endsWith()"
+// this selection (if) is copied from here:
+// https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+
+if (!String.prototype.endsWith) {
+	String.prototype.endsWith = function(searchString, position) {
+		var subjectString = this.toString();
+		if ('number' !== typeof position      ||
+		    !isFinite(position)               ||
+				Math.floor(position) !== position ||
+				position > subjectString.length)
+		{
+			position = subjectString.length;
+		}
+		position -= searchString.length;
+		var lastIndex = subjectString.indexOf(searchString, position);
+		return -1 !== lastIndex  && lastIndex === position;
+	};
+}

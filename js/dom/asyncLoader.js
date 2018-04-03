@@ -21,6 +21,7 @@ function createTagNS(type) {
   return tag; 
 } 
 
+
 function createScriptElement(name) {
   var scriptTag;
   scriptTag       = createTagNS("script");
