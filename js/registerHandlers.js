@@ -7,7 +7,7 @@
 //
 // Notice also, that there are no Business functions declared in here.
 //              Those are declared in "js/meineFunktionen"
-///////////// H A N D L E R S ///////////////////                                         
+///////////// H A N D L E R S ///////////////////
 
 /**
  * @param ID       XML-ID of the TAG
@@ -26,6 +26,6 @@ registerHandler("myRunButton",   "onclick", "doMy_template_Fct");
  * @fct   the function which will be called, when the handler is invoked.
  */
 function registerHandler(id, event, fct) {
-    var IDEle = document.getElementById(id);
-    IDEle.setAttribute(event, fct + "();");
+	var IDEle = document.getElementById(id);
+	IDEle.setAttribute(event, fct + "();");
 }

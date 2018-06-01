@@ -4,21 +4,21 @@
 rm README.md
 
 if [ $# -lt 1 ] ; then 
-  echo "switch to a copy of the template-folder and call"
-  echo "rename.sh <newName>"
-  exit 1
+	echo "switch to a copy of the template-folder and call"
+	echo "rename.sh <newName>"
+	exit 1
 fi
 
 for i in `find . -name "*" -exec grep -l "template" {} \;`
 do
-  mv   "$i" "$i.sedsave";
-  sed  "s/_template_/$1/g" "$i.sedsave" > "$i"
-  echo $i
+	mv   "$i" "$i.sedsave";
+	sed  "s/_template_/$1/g" "$i.sedsave" > "$i"
+	echo $i
 done
 
 for i in `find . -name "*.sedsave"` 
 do
-  rm $i
+	rm $i
 done
 
 mv _template_.html           $1.html

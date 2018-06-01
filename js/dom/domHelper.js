@@ -17,43 +17,42 @@
  * the value zero (0) is returned.
  */
 function readNumberFromFieldViaId(id) {
-  var str = readStringFromFieldViaId(id);
-  if(null != str && str.length > 0 && isFinite(str)) {
-    return +str;
-  } else {
-    return 0.0;
-  }
+	var str = readStringFromFieldViaId(id);
+	if(null != str && str.length > 0 && isFinite(str)) {
+		return +str;
+	} else {
+		return 0.0;
+	}
 }
 
 /**
  * Read anything out of an input field. Return "null", if the given id does not exist.
  */
 function readStringFromFieldViaId(id) {
-  var feld;
-  feld = document.getElementById(id);
-  if(feld) {
-      return feld.value;
-  } else {
-      return null;
-  }
+	var feld;
+	feld = document.getElementById(id);
+	if(feld) {
+		return feld.value;
+	} else {
+		return null;
+	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // B) Writing aids
 
 /**
  * Set the (first) Text child [in the tag <tag id="tagID">]
  * to the given text.
  */
-function setFirstTextChild(tagID, text) { 
-  var oldTag   = document.getElementById(tagID);
-  var txtnode  = document.createTextNode(text);
-  if(oldTag.firstChild) {
-    oldTag.replaceChild(txtnode, oldTag.firstChild);
-   } 
-  else {
-    oldTag.appendChild(txtnode);
-   }
+function setFirstTextChild(tagID, text) {
+	var oldTag   = document.getElementById(tagID);
+	var txtnode  = document.createTextNode(text);
+	if(oldTag.firstChild) {
+		oldTag.replaceChild(txtnode, oldTag.firstChild);
+	} else {
+		oldTag.appendChild(txtnode);
+	}
 }
 
 
@@ -63,9 +62,9 @@ function setFirstTextChild(tagID, text) {
  * The new tag is added as last element in the existing tag.
  */
 function addNewTagToExistingTag(existingTagID, newTagID, newTagType, newTagTextContent) {
-  var oldTag = document.getElementById(existingTagID);
-  var newTag = makeTextTag(newTagType, newTagID, newTagTextContent);
-  oldTag.parentNode.appendChild(newTag);
+	var oldTag = document.getElementById(existingTagID);
+	var newTag = makeTextTag(newTagType, newTagID, newTagTextContent);
+	oldTag.parentNode.appendChild(newTag);
 }
 
 /**
@@ -73,9 +72,9 @@ function addNewTagToExistingTag(existingTagID, newTagID, newTagType, newTagTextC
  * This new paragraph will contain the given text.
  */
 function outputIntoNewParagraph(text) {
-  var body = document.getElementsByTagName("body")[0];
-  var newPara = makeTextTag("p", "", text);
-  body.appendChild(newPara);
+	var body = document.getElementsByTagName("body")[0];
+	var newPara = makeTextTag("p", "", text);
+	body.appendChild(newPara);
 }
 
 /**
@@ -84,16 +83,16 @@ function outputIntoNewParagraph(text) {
  * This new paragraph will be added at the end of the document (body).
  */
 function outputIntoNewOrExistingParagraph(text, paraID) {
-  var oldPara = document.getElementById(paraID);
-  if(! oldPara) {
-    var body = document.getElementsByTagName("body")[0];
-    var newPara = makeTextTag("p", paraID, text);
-    body.appendChild(newPara);
-  } else {
-    removeAllChildren(oldPara);
-    var txtNode = document.createTextNode(text);
-    oldPara.appendChild(txtNode);
-  }
+	var oldPara = document.getElementById(paraID);
+	if(! oldPara) {
+		var body = document.getElementsByTagName("body")[0];
+		var newPara = makeTextTag("p", paraID, text);
+		body.appendChild(newPara);
+	} else {
+		removeAllChildren(oldPara);
+		var txtNode = document.createTextNode(text);
+		oldPara.appendChild(txtNode);
+	}
 }
 
 
@@ -101,14 +100,14 @@ function outputIntoNewOrExistingParagraph(text, paraID) {
  * Helper function to generate a new tag containing given text.
  */
 function makeTextTag(type, tagID, text) {
-  var newTag;
-  newTag = createTagNS(type);
-  var txtnode  = document.createTextNode(text);
-  if(tagID && tagID.length > 0) {
-    newTag.setAttribute("id", tagID);
-  }
-  newTag.appendChild(txtnode); 
-  return newTag; 
+	var newTag;
+	newTag = createTagNS(type);
+	var txtnode  = document.createTextNode(text);
+	if(tagID && tagID.length > 0) {
+		newTag.setAttribute("id", tagID);
+	}
+	newTag.appendChild(txtnode); 
+	return newTag; 
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -118,9 +117,9 @@ function makeTextTag(type, tagID, text) {
  * removes all children from a given node
  */
 function removeAllChildren(ele) {
-  while(ele.hasChildNodes()) {
-    ele.removeChild(ele.lastChild);
-  }
+	while(ele.hasChildNodes()) {
+		ele.removeChild(ele.lastChild);
+	}
 }
 
 
@@ -128,7 +127,7 @@ function removeAllChildren(ele) {
  * Replace a Tag <tag id="tagID"> with a new <tag>
  * containing a given value (text).
  * The new Tag will have the same type (nodeName) as the given tag.
- * (if the element is not empty, this is aequivalent to 
+ * (if the element is not empty, this is aequivalent to
  *  document.getElementById(tagID).innerHTML = text).
  */
 function replaceTag(tagID, text) {
@@ -136,9 +135,8 @@ function replaceTag(tagID, text) {
   var tagType    = oldTag.nodeName;
   var parentNode = oldTag.parentNode;
   var newTag     = makeTextTag(tagType, tagID, text);
-  parentNode.replaceChild(newTag, oldTag); 
+  parentNode.replaceChild(newTag, oldTag);
 }
-
 
 
 // ECMAScript6 missing function "endsWith()"
