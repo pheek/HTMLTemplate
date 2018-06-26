@@ -16,7 +16,7 @@
  */
 
 registerHandler("myInputField",  "onkeyup", "doMy_template_Fct");
-registerHandler("myRunButton",   "onclick", "doMy_template_Fct");
+registerHandler("myRunButton" ,  "onclick", "doMy_template_Fct");
 
 /**
  * Register a handler. EG
