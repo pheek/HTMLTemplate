@@ -3,7 +3,8 @@
 // this script is loaded at the end in "js/dom/asyncLoader.js"
 
 /**
- * Replace the following method by whatever is defined in "js/registerHandlers.js".
+ * Replace the following method by whatever is defined in
+ * "js/registerHandlers.js".
  */
 function doMy_template_Fct() {
 	var n = readNumberFromFieldViaId("myInputField");

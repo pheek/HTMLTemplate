@@ -25,6 +25,7 @@ function readNumberFromFieldViaId(id) {
 	}
 }
 
+
 /**
  * Read anything out of an input field. Return "null", if the given id does not exist.
  */
@@ -106,12 +107,26 @@ function makeTextTag(type, tagID, text) {
 	if(tagID && tagID.length > 0) {
 		newTag.setAttribute("id", tagID);
 	}
-	newTag.appendChild(txtnode); 
-	return newTag; 
+	newTag.appendChild(txtnode);
+	return newTag;
 }
 
 /////////////////////////////////////////////////////////////////////////////
 // C general helper functions
+
+
+/**
+ * Register a handler. EG
+ * registerHandler("myButton", "onclick", "doThings");
+ * @id    given id of (usualy) an input element.
+ * @event a handler like "onclick", onkeyup, ...
+ * @fct   the function which will be called, when the handler is invoked.
+ */
+function registerHandler(id, event, fct) {
+	var IDEle = document.getElementById(id);
+	IDEle.setAttribute(event, fct + "();");
+}
+
 
 /**
  * removes all children from a given node
@@ -131,11 +146,11 @@ function removeAllChildren(ele) {
  *  document.getElementById(tagID).innerHTML = text).
  */
 function replaceTag(tagID, text) {
-  var oldTag     = document.getElementById(tagID);
-  var tagType    = oldTag.nodeName;
-  var parentNode = oldTag.parentNode;
-  var newTag     = makeTextTag(tagType, tagID, text);
-  parentNode.replaceChild(newTag, oldTag);
+	var oldTag     = document.getElementById(tagID);
+	var tagType    = oldTag.nodeName;
+	var parentNode = oldTag.parentNode;
+	var newTag     = makeTextTag(tagType, tagID, text);
+	parentNode.replaceChild(newTag, oldTag);
 }
 
 

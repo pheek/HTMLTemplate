@@ -2,7 +2,7 @@
  * Async Loader (philipp gressly freimann, April 2013)
  * Source:   http://friendlybit.com/js/lazy-loading-asyncronous-javascript/
  *
- * Loads scripts using "myAttachScript" before the first script 
+ * Loads scripts using "myAttachScript" before the first script
  * in your document.
  * The scripts will be started, when the body is loaded (onload, load).
  *
@@ -17,7 +17,7 @@ function createTagNS(type) {
 	if(document.createElementNS) { // firefox knows ElementNS
 		tag = document.createElementNS(ns, type);
 	} else {
-		tag = document.createElement  (type)    ;
+		tag = document.createElement  (    type);
 	}
 	return tag;
 }
@@ -35,7 +35,7 @@ function createScriptElement(name) {
 /**
  * Wait until the DOM is loaded.
  */
-document.addEventListener('DOMContentLoaded', new _myAsyncLoader);  
+document.addEventListener('DOMContentLoaded', new _myAsyncLoader);
 
 function _myAsyncLoader() {
 
