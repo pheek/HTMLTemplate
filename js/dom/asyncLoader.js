@@ -33,10 +33,11 @@ function createScriptElement(name) {
 }
 
 /**
- * A nameless function, which is loaded at the beginning. 
- * This script loads oder scripts.
+ * Wait until the DOM is loaded.
  */
-(function() {
+document.addEventListener('DOMContentLoaded', new _myAsyncLoader);  
+
+function _myAsyncLoader() {
 
 	function async_loader(scriptName) {
 		var newScript     = createScriptElement(scriptName)           ;
@@ -57,4 +58,4 @@ function createScriptElement(name) {
 	myAttachScript("js/registerHandlers.js");
 	myAttachScript("js/_template_.js"      );
 
-})();
+}

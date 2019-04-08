@@ -1,7 +1,7 @@
 // 16. 3. 2011
 // Author: Philipp Gressly Freimann
 
-// Shows how to separate business logic from handlers from Document.
+// Shows how to separate business logic from handlers from Document
 // Notice that there are ABSOLUTELY NO handlers registered in the
 // main xhtml-Document! (Idea Victor Ruch, Timon Waldvogel: Siemens)
 //
