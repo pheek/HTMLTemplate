@@ -32,11 +32,6 @@ function createScriptElement(name) {
 	return scriptTag;
 }
 
-/**
- * Wait until the DOM is loaded.
- */
-document.addEventListener('DOMContentLoaded', new _myAsyncLoader);
-
 function _myAsyncLoader() {
 
 	function async_loader(scriptName) {
@@ -59,3 +54,9 @@ function _myAsyncLoader() {
 	myAttachScript("js/_template_.js"      );
 
 }
+
+/**
+ * Wait until the DOM is loaded.
+ */
+document.addEventListener('DOMContentLoaded', _myAsyncLoader);
+
